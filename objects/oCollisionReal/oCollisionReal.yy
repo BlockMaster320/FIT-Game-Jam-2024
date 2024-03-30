@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sWall",
-    "path":"sprites/sWall/sWall.yy",
+    "name":"sRealCollision",
+    "path":"sprites/sRealCollision/sRealCollision.yy",
   },
   "spriteMaskId":null,
   "visible":true,
