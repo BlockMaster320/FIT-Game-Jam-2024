@@ -111,12 +111,15 @@ switch (menuState)
 					{
 						trans = true;
 						transState = MENU_STATE.GAME;
-						transRoom = levelArray[_level];
-						
 						levelCurrent = _level;
+						transRoom = levelArray[levelCurrent];
+						dialogNum = 0;
+
 						
 						//_falseTimerTrigger = true;
 					}
+					
+					
 				}
 				
 				/*if (button_hover(_drawX, _drawY, _levelW, _levelH, (levelUnlocked >= _level)))
@@ -165,30 +168,50 @@ switch (menuState)
 		if (keyboard_check_pressed(vk_escape))
 			menuState = MENU_STATE.PAUSE;
 			
-			
+		
 		// Dialog
-		if (dialogNum < array_length(dialogArray[levelCurrent]))
+		if (dialogNum < array_length(dialogArray[levelCurrent]) && !trans)
 		{
-			var _color = make_color_rgb(40, 16, 43);
+			var _color = #170f0b; /*#85825f;*/
+			var _textColor = c_white;
+			var _outlineColor = c_white;
 			var _offset = 15;
 			var _sep = 12;
 			var _w = 290;
-			var _width = string_width(dialogArray[levelCurrent][dialogNum][1]);
-			var _height = string_height(dialogArray[levelCurrent][dialogNum][1]) + _sep;
-			var _numOfRows = _width div _w;
-			var _drawX = 95;
-			var _drawY = 60;
-			var _outlineWidth = 1;
-			draw_rectangle_color(_drawX - _outlineWidth, _drawY - _outlineWidth, 225 + _outlineWidth, 105 + _outlineWidth, c_white, c_white, c_white, c_white, false);
-			draw_rectangle_color(_drawX, _drawY, 225, 105, _color, _color, _color, _color, false);
+			//var _width = string_width(dialogArray[levelCurrent][dialogNum][1]);
+			//var _height = string_height(dialogArray[levelCurrent][dialogNum][1]) + _sep;
+			//var _numOfRows = _width div _w;
+			var _drawX1 = 100;
+			var _drawY1 = _guiH - 300;
+			var _drawX2 = _guiW - 100;
+			var _drawY2 = _guiH - 50;
+			var _outlineWidth = 3;
+			draw_rectangle_color(_drawX1 - _outlineWidth, _drawY1 - _outlineWidth, _drawX2 + _outlineWidth, _drawY2 + _outlineWidth, _outlineColor, _outlineColor, _outlineColor, _outlineColor, false);
+			draw_rectangle_color(_drawX1, _drawY1, _drawX2, _drawY2, _color, _color, _color, _color, false);
 			//draw_triangle_color(280, 140, 225, 105 - _offset, 225 - _offset, 105,  _color, _color, _color, false);
 	
+	
+			var _charScale = 8;
 			draw_set_valign(fa_top);
 			draw_set_halign(fa_left);
 			draw_set_font(fText);
-			draw_text_ext_transformed_color(_drawX + 5, _drawY + 5, dialogArray[levelCurrent][dialogNum][1], _sep, _w, 0.4, 0.6, 0, c_white, c_white, c_white, c_white, 1);
-			draw_text_ext_transformed_color(_drawX + 7, 105 - 8, "> ENTER", _sep, _w, 0.4, 0.6, 0, c_grey, c_grey, c_grey, c_grey, 1);
+			if (dialogArray[levelCurrent][dialogNum][0] == 1) {
+				_drawX1 += sprite_get_width(sAlcoholic) * _charScale * 0.7;
+			}
+			draw_text_ext_transformed_color(_drawX1 + 25, _drawY1 + 25, dialogArray[levelCurrent][dialogNum][1], _sep, _w, 2, 2.5, 0, _textColor, _textColor, _textColor, _textColor, 1);
+			draw_text_ext_transformed_color(_drawX1 + 20, _drawY2 - 60, "> ENTER", _sep, _w, 2, 2.5, 0, c_grey, c_grey, c_grey, c_grey, 1);
 			draw_set_font(fMenu);
+			
+			if (dialogArray[levelCurrent][dialogNum][0] == 0) {
+				var _charX = _guiW - 40;
+				var _charY = _guiH - 20;
+				draw_sprite_ext(sPresenter, 0, _charX, _charY, _charScale, _charScale, 0, c_white, 1);
+			}
+			else {
+				var _charX = 40;
+				var _charY = _guiH - 20;
+				draw_sprite_ext(sAlcoholic, 0, _charX, _charY, _charScale, _charScale, 0, c_white, 1);
+			}
 	
 			if (keyboard_check_pressed(vk_enter))
 			{
@@ -207,7 +230,7 @@ switch (menuState)
 		
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_bottom);
-		draw_text_transformed_colour(_guiW * 0.5, _drawY - _buttonH - 50, "GAME PAUSED", 2, 2, 0, TEXT, TEXT, TEXT, TEXT, 1);
+		draw_text_transformed_colour(_guiW * 0.5, _drawY - _buttonH - 50, "GAME PAUSED", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
 		
@@ -218,7 +241,7 @@ switch (menuState)
 		if (buttonSprite(_drawX, _drawY, 1, "Main Menu", true))
 		{
 			menuState = MENU_STATE.MAIN_MENU;
-			levelCurrent = noone;
+			levelCurrent = 0;
 			room_goto(rmMenu);
 			
 			tutProgress = 0;
@@ -233,6 +256,16 @@ switch (menuState)
 	}
 	break;
 }
+
+if (instance_exists(oPlayer)) {
+	if (dialogNum < array_length(dialogArray[levelCurrent]) || trans) {
+		oPlayer.control = false;
+	}
+	else
+		oPlayer.control = true;
+	
+}
+
 
 //Timers
 /*
