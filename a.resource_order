@@ -24,6 +24,8 @@
     {"name":"rmLevel1","order":1,"path":"rooms/rmLevel1/rmLevel1.yy",},
     {"name":"scrInput","order":1,"path":"scripts/scrInput/scrInput.yy",},
     {"name":"sLiminalCollision","order":3,"path":"sprites/sLiminalCollision/sLiminalCollision.yy",},
+    {"name":"scrSaveLoad","order":1,"path":"scripts/scrSaveLoad/scrSaveLoad.yy",},
+    {"name":"sndHover","order":1,"path":"sounds/sndHover/sndHover.yy",},
     {"name":"sPlayer","order":1,"path":"sprites/sPlayer/sPlayer.yy",},
     {"name":"sWall","order":2,"path":"sprites/sWall/sWall.yy",},
     {"name":"tlLiminal","order":1,"path":"tilesets/tlLiminal/tlLiminal.yy",},
