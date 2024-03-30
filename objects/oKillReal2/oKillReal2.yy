@@ -1,13 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"oFinish",
+  "%Name":"oKillReal2",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oFinish",
+  "name":"oKillReal2",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -35,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sFinish",
-    "path":"sprites/sFinish/sFinish.yy",
+    "name":"sSpike2",
+    "path":"sprites/sSpike2/sSpike2.yy",
   },
   "spriteMaskId":null,
   "visible":true,

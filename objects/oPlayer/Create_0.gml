@@ -61,7 +61,9 @@ tileSpikeLiminal = layer_tilemap_get_id("SpikeLiminal")
 tileSpikeEffect = layer_get_fx("SpikeReal")
 
 realInstancesLayer = layer_get_id("RealInstances")
-layer_depth(realInstancesLayer,450)
+//layer_depth(realInstancesLayer,450)
+
+alp = 1
 
 realSurf = surface_create(room_width,room_height)
 liminalSurf = surface_create(room_width,room_height)
@@ -81,14 +83,14 @@ part_type_sprite(impactDust,sDust,false,false,true)
 
 bloodSys = part_system_create()
 blood = part_type_create()
-part_type_life(blood,10,40)
-part_type_speed(blood,1,3,0,0)
+part_type_life(blood,10,60)
+part_type_speed(blood,2,4,0,0)
 part_type_color2(blood, #E51414, #66220F)
-part_type_gravity(blood,.01,90)
+part_type_gravity(blood,.08,270)
 
 shiftSys = part_system_create()
 shift = part_type_create()
-part_type_life(shift,10,40)
+part_type_life(shift,20,25)
 part_type_speed(shift,.05,.1,0,0)
 part_type_sprite(shift,sPlayer,0,false,false)
 part_type_alpha2(shift,.5,0)

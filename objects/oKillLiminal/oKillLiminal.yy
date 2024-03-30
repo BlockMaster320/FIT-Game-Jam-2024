@@ -2,8 +2,8 @@
   "$GMObject":"",
   "%Name":"oKillLiminal",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"oKillLiminal",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sKillLiminal",
-    "path":"sprites/sKillLiminal/sKillLiminal.yy",
+    "name":"sSpikeLim1",
+    "path":"sprites/sSpikeLim1/sSpikeLim1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

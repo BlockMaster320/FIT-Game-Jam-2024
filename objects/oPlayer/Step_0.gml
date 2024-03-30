@@ -10,7 +10,9 @@ switch (currentState)
 		{
 			currentState = STATE.DEAD
 			deathDir = point_direction(x,y,x+hsp,y+vsp)
-			part_type_direction(blood,deathDir-5+180,deathDir+5+180,1,10)
+			var off = 5
+			if (hsp == 0 and vsp == 0) off = 180
+			part_type_direction(blood,deathDir-off+180,deathDir+off+180,0,15)
 			
 			part_type_size(blood,2,3,0,0)
 			//part_particles_create(bloodSys,x,y,blood,50)
@@ -21,15 +23,19 @@ switch (currentState)
 	
 	case STATE.DEAD:
 	{
+		alp *= .92
 		if (deathStateLength == 0) room_restart()
 		noclip = true
-		control = false
+		maxSpd = .5
 		deathStateLength--
 		
-		x += lengthdir_x(.1,deathDir)
-		y += lengthdir_y(.1,deathDir)
+		if (hsp != 0 or vsp != 0)
+		{
+			x += lengthdir_x(.1,deathDir)
+			y += lengthdir_y(.1,deathDir)
+		}
 		
-		part_particles_create(bloodSys,x+random_range(-1,1),y+random_range(-1,1),blood,5)
+		part_particles_create(bloodSys,x+random_range(-1,1),y-5+random_range(-1,1),blood,5)
 		
 		//part_particles_create(impactDustSys,x,y,impactDust,5)	
 		
@@ -39,7 +45,7 @@ switch (currentState)
 	case STATE.LIMINAL:
 	{
 		
-	part_type_subimage(shift,floor(frame))
+		part_type_subimage(shift,floor(frame))
 		var spawn = random(30) < 1
 		part_type_direction(shift,0,360,0,70)
 		
@@ -59,11 +65,7 @@ switch (currentState)
 	{
 		transitionSpeed += transitionSpeedAcc
 		
-		var spawn = 1
-		part_type_subimage(shift,floor(frame))
-		
-		part_type_color1(shift,c_white)
-		part_particles_create(shiftSys,x,y,shift,spawn)
+		layer_depth("Liminal", 450)
 		
 		if (point_distance(x,y,realX,realY) < transitionSpeed)
 		{
@@ -90,6 +92,12 @@ switch (currentState)
 		}
 		else
 		{
+			var spawn = 1
+			part_type_subimage(shift,floor(frame))
+		
+			part_type_color1(shift,c_white)
+			part_type_alpha2(shift,random_range(.2,.8),0)
+			part_particles_create(shiftSys,x,y,shift,spawn)
 			x += lengthdir_x(transitionSpeed,point_direction(x,y,realX,realY))
 			y += lengthdir_y(transitionSpeed,point_direction(x,y,realX,realY))
 		}
@@ -106,7 +114,6 @@ if (control and liminalJump)
 	{	
 		case STATE.LIMINAL:
 		{
-			layer_set_fx(liminalEffectLayer,liminalEffect)
 			realX = x
 			realY = y
 			currentCollision = oCollisionLiminal
@@ -140,7 +147,6 @@ if (control and liminalJump)
 			oCamera.lerpSpd = oCamera.lerpSpdShifting
 			noclip = true
 			control = false
-			layer_depth("Liminal", 450)
 			liminalAlpha = liminalTransparency
 			realAlpha = 1
 			layer_clear_fx(liminalEffectLayer)
