@@ -19,6 +19,7 @@
   "height":54,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"3f592320-c6bf-4a90-a7bc-8dbe5fe7d181","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"3f592320-c6bf-4a90-a7bc-8dbe5fe7d181","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"29860462-d602-4149-aa84-3b3061b60bd3","blendMode":0,"displayName":"default","isLocked":false,"name":"29860462-d602-4149-aa84-3b3061b60bd3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sCave2",

@@ -19,6 +19,7 @@
   "height":90,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"5d821daa-18a7-450a-8666-e0486b222a0c","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"5d821daa-18a7-450a-8666-e0486b222a0c","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"e621ded6-4d5e-4d7f-9079-ca940d2ecb01","blendMode":0,"displayName":"default","isLocked":false,"name":"e621ded6-4d5e-4d7f-9079-ca940d2ecb01","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sCave1",

@@ -1,7 +1,6 @@
 #macro VISUAL_OFFSET_X 2
 #macro VISUAL_OFFSET_Y -2
 
-level = 0;
 menuState = MENU_STATE.MAIN_MENU;
 
 buttonHoverControl = false;
@@ -12,6 +11,7 @@ buttonHover = false;
 #macro TEXT c_black
 
 //Levels
+levelIndex = 0;
 levelUnlocked = 0;
 levelCurrent = noone;
 levelArray = [rmLevel1]
@@ -59,3 +59,7 @@ else
 	//bestTimes = _saveStruct.bestTimes;
 	//showTimer = _saveStruct.settings[0];
 }
+
+// Dialog
+dialogNum = 0;
+dialogArray = [[[0, "haha"], [0, "yoooo"], [1, "AMOUNGUVYS"]], []]
