@@ -4,8 +4,6 @@ if (!surface_exists(realSurf))
 	liminalSurf = surface_create(room_width,room_height)
 }
 
-draw_self()
-
 if (currentState == STATE.LIMINAL or currentState == STATE.TRANSITION_TO_REAL)
 {
 	var alpha = .3
@@ -38,3 +36,23 @@ if (currentState != STATE.REAL)
 }
 
 draw_set_alpha(1)
+
+// Animation
+if (rightPressed || leftPressed)
+	side = rightPressed - leftPressed;
+if (right || left) {
+	frame = (frame + 0.1) % 4;
+}
+else frame = 4;
+if (jumpReady && jump) {
+	jumpTimer = 20;
+}
+if (jumpTimer > 0) {
+	frame = 6;
+	if (jumpTimer < 4)
+		frame = 5;
+	jumpTimer--;
+}
+
+draw_sprite_ext(sPlayer, frame, x, y, side, 1, 0, c_white, 1);
+

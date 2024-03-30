@@ -17,3 +17,5 @@ screenshake = 0
 offX = 0
 offY = 0
 rot = 0
+
+#macro BG_COLOR #342821

@@ -7,6 +7,8 @@ function Input()
 
 	left = keyboard_check(ord("A")) or keyboard_check(vk_left)
 	right = keyboard_check(ord("D")) or keyboard_check(vk_right)
+	leftPressed = keyboard_check_pressed(ord("A")) or keyboard_check_pressed(vk_left)
+	rightPressed = keyboard_check_pressed(ord("D")) or keyboard_check_pressed(vk_right)
 
 	//Skok
 	jump = keyboard_check(vk_space) or keyboard_check(ord("W")) or keyboard_check(vk_up)

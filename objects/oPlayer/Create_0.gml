@@ -101,3 +101,8 @@ soonJumpTimer = 0
 lateJumpTimerDefault = 7
 lateJumpTimer = 0
 #endregion
+
+// Animation
+side = 1;
+frame = 0;
+jumpTimer = 0;
