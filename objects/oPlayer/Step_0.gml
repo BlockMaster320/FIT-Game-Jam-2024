@@ -23,7 +23,7 @@ switch (currentState)
 	
 	case STATE.DEAD:
 	{
-		alp *= .92
+		//alp *= .92
 		if (deathStateLength == 0) room_restart()
 		noclip = true
 		maxSpd = .5

@@ -45,14 +45,14 @@ tileReal = layer_tilemap_get_id("Real")
 layer_set_visible(realLayer,false)
 realLayerX = 0
 realLayerY = 0
-realTransparency = .3
+realTransparency = .6
 realAlpha = 1
 liminalLayer = layer_get_id("Liminal")
 tileLiminal = layer_tilemap_get_id("Liminal")
 layer_set_visible(liminalLayer,false)
 liminalLayerX = 0
 liminalLayerY = 0
-liminalTransparency = .3
+liminalTransparency = .2
 liminalAlpha = liminalTransparency
 liminalOffset = 2
 
