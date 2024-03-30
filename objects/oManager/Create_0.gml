@@ -11,10 +11,9 @@ buttonHover = false;
 #macro TEXT c_black
 
 //Levels
-levelIndex = 0;
 levelUnlocked = 0;
-levelCurrent = noone;
-levelArray = [rmLevel1]
+levelCurrent = 0;
+levelArray = [rmLevel0, rmLevel1, rmLevel2, rmLevel3, rmLevel4, rmLevel5, rmLevel6, rmLevel7, rmLevel8, rmLevel9];
 
 //Transitions
 #macro TRANS_SPEED 0.03
@@ -62,4 +61,6 @@ else
 
 // Dialog
 dialogNum = 0;
-dialogArray = [[[0, "haha"], [0, "yoooo"], [1, "AMOUNGUVYS"]], []]
+dialogArray = [[[0, "haha ha hh ahhhhahah hhhhaa haahahahaha aha hahhaahahah"], [1, "yoooo"], [0, "AMOUNGUVYS"]],
+			   [[0, "naaah"], [0, "sssussy"], [1, "baka"]],
+			   [], [], [], [], [], [], [], []];
