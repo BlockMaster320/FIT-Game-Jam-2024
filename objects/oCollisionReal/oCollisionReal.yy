@@ -9,7 +9,10 @@
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"opReal",
+    "path":"objects/opReal/opReal.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,5 +35,5 @@
     "path":"sprites/sRealCollision/sRealCollision.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

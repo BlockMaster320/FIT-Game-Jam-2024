@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"sLiminalCollision",
-  "bboxMode":0,
+  "bboxMode":1,
   "bbox_bottom":7,
   "bbox_left":0,
   "bbox_right":7,
@@ -19,7 +19,7 @@
   "height":8,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"36c9bd7e-761c-4a36-acc9-47917fba9aa0","blendMode":0,"displayName":"default","isLocked":false,"name":"36c9bd7e-761c-4a36-acc9-47917fba9aa0","opacity":25.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"36c9bd7e-761c-4a36-acc9-47917fba9aa0","blendMode":0,"displayName":"default","isLocked":false,"name":"36c9bd7e-761c-4a36-acc9-47917fba9aa0","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sLiminalCollision",
   "nineSlice":null,
