@@ -14,11 +14,11 @@ var _drawX = _guiW * 0.5;
 var _buttonW = 200;
 var _buttonWLong = 300;
 var _buttonH = 70;
-var _buttonSpacing = 30;
+var _buttonSpacing = 70;
 
 buttonHoverControl = false;
 
-//draw_set_font(fntMenu);
+draw_set_font(fMenu);
 window_set_cursor(cr_default);
 
 //var _falseTimerTrigger = false;
@@ -33,26 +33,28 @@ switch (menuState)
 	{
 		draw_sprite_ext(sLogo, 0, _drawX + 20, _guiH * 0.25, 0.5, 0.5, 0, c_white, 1);
 		
-		if (button(_drawX, _drawY, _buttonW, _buttonH, "Play", true))
+		if (buttonSprite(_drawX, _drawY, 0, "Play", true))
 			menuState = MENU_STATE.LEVEL_SELECT;
 		
 		_drawY += _buttonH + _buttonSpacing;
-		if (button(_drawX, _drawY, _buttonW, _buttonH, "Settings", true))
+		if (buttonSprite(_drawX, _drawY, 1, "Settings", true))
 			menuState = MENU_STATE.SETTINGS;
 		
-		_drawY += _buttonH + _buttonSpacing;
-		if (button(_drawX, _drawY, _buttonW, _buttonH, "Quit", true))
+		_drawY += _buttonH + _buttonSpacing + 10;
+		if (buttonSprite(_drawX, _drawY, 2, "Quit", true))
 			game_end();
 		
 		//Draw Game Info
 		//draw_set_font(fntMenuCredits);
 		draw_set_halign(fa_right);
 		draw_set_valign(fa_bottom);
-		draw_text_transformed_colour(_guiW - 20, _guiH - 20, "A GAME BY:\n\nBloki (coding, graphics)\nMakenbo (coding, sfxs)", 1, 1, 0, TEXT, TEXT, TEXT, TEXT, 1);
-				draw_set_halign(fa_right);
+		draw_set_font(fText);
+		draw_text_ext_transformed_color(_guiW - 20, _guiH - 20, "A GAME BY:\n\nBloki (coding, graphics)\nMakenbo (coding, sfxs)", 20, 500, 1, 1.2, 0, TEXT, TEXT, TEXT, TEXT, 1);
+		draw_set_halign(fa_right);
 		
 		draw_set_halign(fa_left);
-		draw_text_transformed_colour(20, _guiH - 20, "Created as a submission for the FIT Game Jam 2024", 1, 1, 0, TEXT, TEXT, TEXT, TEXT, 1);
+		draw_text_ext_transformed_color(20, _guiH - 20, "Created as a submission for\nthe FIT Game Jam 2024", 20, 500, 1, 1.2, 0, TEXT, TEXT, TEXT, TEXT, 1);
+		draw_set_font(fMenu);
 		draw_set_halign(fa_top);
 		draw_set_valign(fa_left);
 		//draw_set_font(fntMenu);
@@ -72,10 +74,10 @@ switch (menuState)
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
 		
-		if (button(50 + _buttonWLong * 0.5, _guiH - 50 - _buttonH, _buttonWLong, _buttonH, "Back to Menu", true))
+		if (buttonSprite(200, _guiH - 120, 0, "Back to Menu", true))
 			menuState = MENU_STATE.MAIN_MENU;
 		
-		if (button(_guiW - 50 - (_buttonWLong + 30) * 0.5, _guiH - 50 - _buttonH, _buttonWLong + 30, _buttonH, "Reset Progress", true))
+		if (buttonSprite(_guiW - 200, _guiH - 120, 0, "Reset Progress", true))
 		{
 			levelUnlocked = 0;
 			
@@ -151,7 +153,7 @@ switch (menuState)
 			json_string_save(_saveString, saveFile);
 		}*/
 		
-		if (button(50 + _buttonWLong * 0.5, _guiH - 50 - _buttonH, _buttonWLong, _buttonH, "Back to Menu", true))
+		if (buttonSprite(200, _guiH - 120, 0, "Back to Menu", true))
 			menuState = MENU_STATE.MAIN_MENU;
 	}
 	break;
@@ -175,11 +177,11 @@ switch (menuState)
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
 		
-		if (button(_drawX, _drawY, _buttonWLong, _buttonH, "Continue", true))
+		if (buttonSprite(_drawX, _drawY, 0, "Continue", true))
 			menuState = MENU_STATE.GAME;
 		
 		_drawY += _buttonH + _buttonSpacing;
-		if (button(_drawX, _drawY, _buttonWLong, _buttonH, "Main Menu", true))
+		if (buttonSprite(_drawX, _drawY, 1, "Main Menu", true))
 		{
 			menuState = MENU_STATE.MAIN_MENU;
 			levelCurrent = noone;

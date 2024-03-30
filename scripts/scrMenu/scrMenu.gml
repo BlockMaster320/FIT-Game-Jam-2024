@@ -63,6 +63,63 @@ enum MENU_STATE
 	return _click;
 }
 
+ function buttonSprite(_x, _y, _subImg, _text, _active)
+{
+	if (oManager.trans) return false;
+	
+	var _mouseX = window_mouse_get_x();
+	var _mouseY = window_mouse_get_y();
+	var _sprW = sprite_get_width(sButton);
+	var _sprH = sprite_get_height(sButton);
+	
+	var _click = false;
+	var _hover = false;
+	var _alpha = 0.5;
+	if (_active)
+	{
+		_alpha = 1;
+		if (point_in_rectangle(_mouseX, _mouseY, _x - _sprW / 2.5, _y - _sprH / 3, _x + _sprW / 2.5, _y + _sprH / 3))
+		{
+			_hover = true;
+			window_set_cursor(cr_handpoint);
+			if (mouse_check_button_pressed(mb_left))
+			{
+				_click = true;
+				audio_play_sound(sndClick,0,0)
+			}
+			
+			with (oManager)
+			{
+				if (buttonHover == false)
+					audio_play_sound(sndHover, 10, false);
+				buttonHoverControl = true;
+			}
+		}
+	}
+	
+	var _colour1 = c_black;
+	var _colour2 = MENU_BACKGROUND;
+	if (_hover)
+	{
+		_colour1 = c_white;
+		_colour2 = c_black;
+		gpu_set_fog(true, c_white, 0, 0);
+	}
+	draw_set_alpha(_alpha);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	//draw_roundrect_color(_x, _y, _x + _width, _y + _height, c_white, c_white, false);
+	draw_sprite_ext(sButton, _subImg, _x, _y, 0.9, 0.9, 0, c_white, 1);
+	gpu_set_fog(false, c_white, 0, 0);
+	draw_text_transformed_color(_x, _y, _text, 1, 1, 0,
+								_colour2, _colour2, _colour2, _colour2, 1);
+	draw_set_alpha(1);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	
+	return _click;
+}
+
 function button_hover(_x, _y, _width, _height, _active)
 {
 	var _mouseX = window_mouse_get_x();

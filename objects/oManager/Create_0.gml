@@ -5,7 +5,7 @@ buttonHoverControl = false;
 buttonHover = false;
 
 // Colors
-#macro MENU_BACKGROUND #ded24a
+#macro MENU_BACKGROUND #e6d83a
 #macro TEXT c_black
 
 //Levels
