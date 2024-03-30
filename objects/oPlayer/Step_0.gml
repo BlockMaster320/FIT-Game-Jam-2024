@@ -1,15 +1,19 @@
 Input()
 
-part_type_direction(impactDust,175,190,0,0)
-//part_particles_create(impactDustSys,x,y+5,impactDust,1)
-part_type_direction(impactDust,-5,5,0,0)
-//part_particles_create(impactDustSys,x,y+5,impactDust,1)
-
 switch (currentState)
 {	
 	case STATE.REAL:
 	{
-		if (place_meeting(x,y,currentKillTrigger) or place_meeting(x,y,currentCollision)) currentState = STATE.DEAD
+		if (place_meeting(x,y,currentKillTrigger) or place_meeting(x,y,currentCollision))
+		{
+			currentState = STATE.DEAD
+			deathDir = point_direction(x,y,x+hsp,y+vsp)
+			part_type_direction(blood,deathDir-5+180,deathDir+5+180,1,10)
+			
+			part_type_size(blood,2,3,0,0)
+			//part_particles_create(bloodSys,x,y,blood,50)
+			part_type_size(blood,1,2,0,0)
+		}
 		else break
 	}
 	
@@ -19,11 +23,23 @@ switch (currentState)
 		noclip = true
 		control = false
 		deathStateLength--
+		
+		x += lengthdir_x(.1,deathDir)
+		y += lengthdir_y(.1,deathDir)
+		
+		part_particles_create(bloodSys,x+random_range(-1,1),y+random_range(-1,1),blood,5)
+		
+		//part_particles_create(impactDustSys,x,y,impactDust,5)	
+		
 		break
 	}
 	
 	case STATE.LIMINAL:
 	{
+		var spawn = random(30) < 1
+		part_type_direction(shift,0,360,0,70)
+		part_particles_create(shiftSys,x,y,shift,spawn)
+		
 		if (place_meeting(x,y,currentKillTrigger))
 		{
 			liminalJump = true
@@ -36,6 +52,10 @@ switch (currentState)
 	case STATE.TRANSITION_TO_REAL:
 	{
 		transitionSpeed += transitionSpeedAcc
+		
+		var spawn = 1
+		part_particles_create(shiftSys,x,y,shift,spawn)
+		
 		if (point_distance(x,y,realX,realY) < transitionSpeed)
 		{
 			x = realX
@@ -131,7 +151,15 @@ if (control)
 	whsp = clamp(whsp,-maxSpd,maxSpd)
 	wvsp = clamp(wvsp,-maxWvsp,maxWvsp)
 	
-	var onGround = place_meeting(x,y+1,currentCollision)
+	var onGroundPrev = onGround
+	onGround = place_meeting(x,y+1,currentCollision)
+	if (onGround and onGroundPrev != onGround)
+	{
+		part_type_direction(impactDust,175,190,0,0)
+		part_particles_create(impactDustSys,x,y,impactDust,5)
+		part_type_direction(impactDust,-5,5,0,0)
+		part_particles_create(impactDustSys,x,y,impactDust,5)	
+	}
 	
 	if (dir = 0)
 	{
