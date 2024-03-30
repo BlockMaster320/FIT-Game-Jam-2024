@@ -69,10 +69,29 @@ layer_clear_fx(liminalEffectLayer)
 
 impactDustSys = part_system_create()
 impactDust = part_type_create()
-part_type_size(impactDust,2,5,0,0)
-part_type_life(impactDust,50,100)
-part_type_color1(impactDust,$472C49)
-part_type_speed(impactDust,.05,.2,0,0)
+part_type_size(impactDust,.5,2,0,0)
+part_type_life(impactDust,30,60)
+part_type_speed(impactDust,.2,.5,-.005,0)
+part_type_gravity(impactDust,.002,90)
+part_type_sprite(impactDust,sDust,false,false,true)
+
+bloodSys = part_system_create()
+blood = part_type_create()
+part_type_life(blood,10,40)
+part_type_speed(blood,1,3,0,0)
+part_type_color2(blood, #E51414, #66220F)
+part_type_gravity(blood,.01,90)
+
+shiftSys = part_system_create()
+shift = part_type_create()
+part_type_life(shift,10,40)
+part_type_speed(shift,.05,.1,0,0)
+part_type_sprite(shift,sPlayer,0,false,false)
+part_type_alpha2(shift,.5,0)
+
+deathDir = 0
+
+onGround = true
 
 #region Better jump
 jumpReady = false
