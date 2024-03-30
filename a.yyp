@@ -34,11 +34,16 @@
   },
   "name":"a",
   "resources":[
+    {"id":{"name":"oEmpty","path":"objects/oEmpty/oEmpty.yy",},},
+    {"id":{"name":"oCollisionLiminal","path":"objects/oCollisionLiminal/oCollisionLiminal.yy",},},
+    {"id":{"name":"oCollisionReal","path":"objects/oCollisionReal/oCollisionReal.yy",},},
     {"id":{"name":"oManager","path":"objects/oManager/oManager.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"rmLevel1","path":"rooms/rmLevel1/rmLevel1.yy",},},
     {"id":{"name":"rmMenu","path":"rooms/rmMenu/rmMenu.yy",},},
+    {"id":{"name":"scrInput","path":"scripts/scrInput/scrInput.yy",},},
     {"id":{"name":"scrMenu","path":"scripts/scrMenu/scrMenu.yy",},},
+    {"id":{"name":"sLiminalCollision","path":"sprites/sLiminalCollision/sLiminalCollision.yy",},},
     {"id":{"name":"scrSaveLoad","path":"scripts/scrSaveLoad/scrSaveLoad.yy",},},
     {"id":{"name":"sndClick","path":"sounds/sndClick/sndClick.yy",},},
     {"id":{"name":"sndHover","path":"sounds/sndHover/sndHover.yy",},},
@@ -51,8 +56,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rmMenu","path":"rooms/rmMenu/rmMenu.yy",},},
     {"roomId":{"name":"rmLevel1","path":"rooms/rmLevel1/rmLevel1.yy",},},
+    {"roomId":{"name":"rmMenu","path":"rooms/rmMenu/rmMenu.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
