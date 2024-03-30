@@ -63,4 +63,11 @@ else
 dialogNum = 0;
 dialogArray = [[[0, "haha ha hh ahhhhahah hhhhaa haahahahaha aha hahhaahahah"], [1, "yoooo"], [0, "AMOUNGUVYS"]],
 			   [[0, "naaah"], [0, "sssussy"], [1, "baka"]],
-			   [], [], [], [], [], [], [], []];
+			   [],
+			   [],
+			   [],
+			   [],
+			   [],
+			   [],
+			   [],
+			   []];
