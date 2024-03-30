@@ -37,5 +37,5 @@
     "path":"sprites/sKillReal/sKillReal.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
