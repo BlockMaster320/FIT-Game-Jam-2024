@@ -1,3 +1,6 @@
+#macro VISUAL_OFFSET_X 2
+#macro VISUAL_OFFSET_Y -2
+
 level = 0;
 menuState = MENU_STATE.MAIN_MENU;
 

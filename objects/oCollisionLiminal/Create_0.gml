@@ -1,0 +1,2 @@
+x += VISUAL_OFFSET_X
+y += VISUAL_OFFSET_Y
