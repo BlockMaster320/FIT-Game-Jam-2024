@@ -123,6 +123,8 @@ if (control and liminalJump)
 			realAlpha = realTransparency
 			realwvsp = wvsp
 			realwhsp = whsp
+			
+			layer_set_fx("Vignette_1",liminalEffect)
 			break
 		}
 		
@@ -149,7 +151,8 @@ if (control and liminalJump)
 			control = false
 			liminalAlpha = liminalTransparency
 			realAlpha = 1
-			layer_clear_fx(liminalEffectLayer)
+			
+			layer_clear_fx("Vignette_1")
 			break
 		}
 	}

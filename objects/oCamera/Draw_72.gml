@@ -3,7 +3,7 @@
 if (oPlayer.currentState = STATE.LIMINAL)
 {
 	draw_clear(c_black);
-	draw_set_alpha(0.4)
+	draw_set_alpha(0)
 }
 else draw_clear(BG_COLOR);
 

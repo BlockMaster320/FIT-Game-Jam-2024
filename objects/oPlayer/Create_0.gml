@@ -8,7 +8,7 @@ enum STATE
 	DEAD
 }
 
-deathStateLength = 20
+deathStateLength = 25
 
 whsp = 0
 wvsp = 0
@@ -32,7 +32,7 @@ realwhsp = 0
 transitionSpeedDef = .5
 transitionSpeedAcc = 1
 transitionSpeed = transitionSpeedDef
-transitionWaitDef = 20
+transitionWaitDef = 15
 transitionWait = transitionWaitDef
 noclip = false
 control = true
@@ -45,7 +45,7 @@ tileReal = layer_tilemap_get_id("Real")
 layer_set_visible(realLayer,false)
 realLayerX = 0
 realLayerY = 0
-realTransparency = .6
+realTransparency = .5
 realAlpha = 1
 liminalLayer = layer_get_id("Liminal")
 tileLiminal = layer_tilemap_get_id("Liminal")
@@ -68,10 +68,19 @@ alp = 1
 realSurf = surface_create(room_width,room_height)
 liminalSurf = surface_create(room_width,room_height)
 
-liminalEffectLayer = layer_get_id("LiminalEffect1")
-layer_set_visible(liminalEffectLayer,true)
-liminalEffect = layer_get_fx(liminalEffectLayer)
-layer_clear_fx(liminalEffectLayer)
+liminalEffect = fx_create("_filter_underwater")
+fx_set_parameter(liminalEffect,"g_Distort1Speed",.012)
+fx_set_parameter(liminalEffect,"g_Distort2Speed",.005)
+fx_set_parameter(liminalEffect,"g_Distort2Scale",[100,37])
+fx_set_parameter(liminalEffect,"g_Distort1Amount",0)
+fx_set_parameter(liminalEffect,"g_Distort2Amount",1.25)
+fx_set_parameter(liminalEffect,"g_ChromaSpreadAmount",10)
+fx_set_parameter(liminalEffect,"g_CamOffsetScale",3.25)
+fx_set_parameter(liminalEffect,"g_GlintCol",[0,0,0])
+fx_set_parameter(liminalEffect,"g_TintCol",[1,1,1])
+fx_set_parameter(liminalEffect,"g_AddCol",[0,0,0])
+layer_clear_fx("Vignette_1")
+
 
 impactDustSys = part_system_create()
 impactDust = part_type_create()
