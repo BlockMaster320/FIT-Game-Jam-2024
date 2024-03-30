@@ -1,5 +1,9 @@
 Input()
 
+part_type_direction(impactDust,175,190,0,0)
+//part_particles_create(impactDustSys,x,y+5,impactDust,1)
+part_type_direction(impactDust,-5,5,0,0)
+//part_particles_create(impactDustSys,x,y+5,impactDust,1)
 
 switch (currentState)
 {	

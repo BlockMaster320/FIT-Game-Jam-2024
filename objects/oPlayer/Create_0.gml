@@ -67,6 +67,12 @@ layer_set_visible(liminalEffectLayer,true)
 liminalEffect = layer_get_fx(liminalEffectLayer)
 layer_clear_fx(liminalEffectLayer)
 
+impactDustSys = part_system_create()
+impactDust = part_type_create()
+part_type_size(impactDust,2,5,0,0)
+part_type_life(impactDust,50,100)
+part_type_color1(impactDust,$472C49)
+part_type_speed(impactDust,.05,.2,0,0)
 
 #region Better jump
 jumpReady = false
