@@ -56,6 +56,10 @@ liminalTransparency = .3
 liminalAlpha = liminalTransparency
 liminalOffset = 2
 
+tileSpikeReal = layer_tilemap_get_id("SpikeReal")
+tileSpikeLiminal = layer_tilemap_get_id("SpikeLiminal")
+tileSpikeEffect = layer_get_fx("SpikeReal")
+
 realInstancesLayer = layer_get_id("RealInstances")
 layer_depth(realInstancesLayer,450)
 

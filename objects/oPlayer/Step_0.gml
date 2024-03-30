@@ -1,5 +1,7 @@
 Input()
 
+
+
 switch (currentState)
 {	
 	case STATE.REAL:
@@ -36,8 +38,12 @@ switch (currentState)
 	
 	case STATE.LIMINAL:
 	{
+		
+	part_type_subimage(shift,floor(frame))
 		var spawn = random(30) < 1
 		part_type_direction(shift,0,360,0,70)
+		
+		part_type_color1(shift,c_black)
 		part_particles_create(shiftSys,x,y,shift,spawn)
 		
 		if (place_meeting(x,y,currentKillTrigger))
@@ -54,6 +60,9 @@ switch (currentState)
 		transitionSpeed += transitionSpeedAcc
 		
 		var spawn = 1
+		part_type_subimage(shift,floor(frame))
+		
+		part_type_color1(shift,c_white)
 		part_particles_create(shiftSys,x,y,shift,spawn)
 		
 		if (point_distance(x,y,realX,realY) < transitionSpeed)
@@ -193,6 +202,23 @@ if (control)
 		lateJumpTimer = 0
 	}
 	if (jumpReleased and vsp < -jumpHeight/4) wvsp = -jumpHeight/4
+}
+
+// Animation
+if (rightPressed || leftPressed)
+	side = rightPressed - leftPressed;
+if (right || left) {
+	frame = (frame + 0.1) % 4;
+}
+else frame = 4;
+if (jumpPressed and onGround) {
+	jumpTimer = 12;
+}
+if (jumpTimer > 0) {
+	frame = 6;
+	if (jumpTimer > 8)
+		frame = 5;
+	jumpTimer--;
 }
 
 // Momentum calculations before collision

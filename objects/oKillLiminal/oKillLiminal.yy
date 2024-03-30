@@ -35,5 +35,5 @@
     "path":"sprites/sKillLiminal/sKillLiminal.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

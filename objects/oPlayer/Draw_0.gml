@@ -7,17 +7,19 @@ if (!surface_exists(realSurf))
 if (currentState == STATE.LIMINAL or currentState == STATE.TRANSITION_TO_REAL)
 {
 	var alpha = .3
-	draw_sprite_ext(sPlayer,0,realX,realY,1,1,0,c_white,alpha)
+	draw_sprite_ext(sPlayer,4,realX,realY,1,1,0,c_white,alpha)
 }
 
 surface_set_target(realSurf)
 	draw_clear_alpha(0,0)
 	draw_tilemap(tileReal,0,0)
+	//draw_tilemap(tileSpikeReal,0,0)
 surface_reset_target()
 
 surface_set_target(liminalSurf)
 	draw_clear_alpha(0,0)
 	draw_tilemap(tileLiminal,liminalLayerX+liminalOffset,liminalLayerY-liminalOffset)
+	//draw_tilemap(tileSpikeLiminal,liminalLayerX+liminalOffset,liminalLayerY-liminalOffset)
 surface_reset_target()
 
 if (currentState == STATE.REAL)
@@ -37,22 +39,9 @@ if (currentState != STATE.REAL)
 
 draw_set_alpha(1)
 
-// Animation
-if (rightPressed || leftPressed)
-	side = rightPressed - leftPressed;
-if (right || left) {
-	frame = (frame + 0.1) % 4;
-}
-else frame = 4;
-if (jumpReady && jump) {
-	jumpTimer = 20;
-}
-if (jumpTimer > 0) {
-	frame = 6;
-	if (jumpTimer < 4)
-		frame = 5;
-	jumpTimer--;
-}
+var col
+if (currentState = STATE.LIMINAL) col = c_black
+else col = c_white
 
-draw_sprite_ext(sPlayer, frame, x, y, side, 1, 0, c_white, 1);
+draw_sprite_ext(sPlayer, frame, x, y, side, 1, 0, col, 1);
 
