@@ -13,7 +13,7 @@ buttonHover = false;
 //Levels
 levelUnlocked = 0;
 levelCurrent = 0;
-levelArray = [rmLevel0, rmLevel1, rmLevel2, rmLevel3, rmLevel4, rmLevel5, rmLevel6, rmLevel7, rmLevel8, rmLevel9];
+levelArray = [rmLevel0, rmLevel1, rmLevel2, rmLevel3, rmLevel4, rmLevel5, rmLevel6, rmLevel7/*, rmLevel8, rmLevel9*/];
 
 //Transitions
 #macro TRANS_SPEED 0.03
@@ -61,6 +61,10 @@ else
 	//showTimer = _saveStruct.settings[0];
 }
 
+dialogSound = 0
+levelStarted = true
+crowdSound = sndCrowdAmbientLooping
+
 // Dialog
 dialogNum = 0;
 dialogArray = [[[0, "Weeeeelcome to LIMINAL!!!"], [0, "The reality show made by alcoholics for alcoholics."], [0, "Each episode, a poor individual is VOLUNTARILY (TM) brought to our dungeon-like television set..."], [0, "...to show its worth by overcoming a series of intricate puzzles."], [0, "A great price awaits those who are able to conquer the challenge - a chance for a new life."], [0, "Those who aren't? Well, let's just say you don't want to go near these pink puddles laying around."], [0, "Enough of boring talking, are you ready?"], [1, "..."], [0, "The task is simple."], [0, "Overcome the obstacles, get your bottle of beer."], [0, "Use \"WASD\" to move around."], [1, "???"]],
@@ -68,8 +72,8 @@ dialogArray = [[[0, "Weeeeelcome to LIMINAL!!!"], [0, "The reality show made by 
 			   [[0, "Heard of pink water?"], [0, "Now get reedy fooor... um..."], [0, "BLACK WATER... yeah."], [1, "..."], [0, "Not as deadly as the pink one - it only snaps you back to reality when touching it."]],
 			   [[0, "On this stage, there is absolutely no danger at all!"],[0, "Going one step backwards might bring you two steps forward!"],[0,"Just try not to end up on the other side of the arena! xD"],[1,"...?"]],
 			   [[0,"Another stage, another beer!"],[0,"In a way, every bear only comes after going through an acid maze"],[1,"..."]],
+			   [[0,"Bottoms down cuz we're falling up!"],[1,"..."]],
 			   [],
-			   [],
-			   [],
+			   [[0,"Got right to make yourself bright!"],[0,"Or more drunk I guess.."],[1,"..."]],
 			   [],
 			   []];

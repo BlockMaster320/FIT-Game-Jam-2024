@@ -181,6 +181,17 @@ switch (menuState)
 				fullscreenAknowledged = true;
 		}
 			
+		if (levelStarted and dialogNum < array_length(dialogArray[levelCurrent]) && !trans)
+		{
+			levelStarted = false
+			audio_stop_sound(sndCrowdAmbientLooping)
+			crowdSound = audio_play_sound(sndCrowdAmbientLooping,0,1)
+			if (dialogArray[levelCurrent][dialogNum][0] == 0)
+			{
+				var chooseSound = choose(reporter2,reporter1,reporter3,reporter4,reporter5,reporter6)
+				dialogSound = audio_play_sound(chooseSound,0,0)
+			}
+		}
 		
 		// Dialog
 		if (dialogNum < array_length(dialogArray[levelCurrent]) && !trans)
@@ -231,6 +242,28 @@ switch (menuState)
 				/*var snd = choose(sndTalking,sndTalking2,sndTalking3,sndTalking4)
 				audio_play_sound(snd,0,0)*/
 				dialogNum++;
+				if (dialogNum < array_length(dialogArray[levelCurrent]) && !trans)
+				{
+					
+					
+					audio_stop_sound(dialogSound)
+					if (dialogArray[levelCurrent][dialogNum][0] == 0)
+					{
+						var chooseSound = choose(reporter2,reporter1,reporter3,reporter4,reporter5,reporter6)
+						dialogSound = audio_play_sound(chooseSound,0,0)
+					}
+					else
+					{
+						var chooseSound = choose(homerbruh1,homerbruh2,homerbruh3,homerbruh4)
+						
+			audio_sound_pitch(chooseSound,.85)
+						dialogSound = audio_play_sound(chooseSound,0,0,.700)
+					}
+				}
+				else
+				{
+					audio_sound_gain(crowdSound,0,4000)
+				}
 			}
 		}
 

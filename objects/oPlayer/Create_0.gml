@@ -8,6 +8,9 @@ enum STATE
 	DEAD
 }
 
+walkTimerDef = 15
+walkTimer = walkTimerDef
+
 deathStateLength = 25
 
 whsp = 0
