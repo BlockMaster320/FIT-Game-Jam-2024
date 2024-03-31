@@ -54,9 +54,8 @@ switch (menuState)
 		
 		draw_set_halign(fa_left);
 		draw_text_ext_transformed_color(20, _guiH - 20, "Created as a submission for\nthe FIT Game Jam 2024", 20, 500, 1, 1.2, 0, TEXT, TEXT, TEXT, TEXT, 1);
+		draw_set_valign(fa_top);
 		draw_set_font(fMenu);
-		draw_set_halign(fa_top);
-		draw_set_valign(fa_left);
 		//draw_set_font(fntMenu);
 		
 		tutProgress = 0;
@@ -155,6 +154,12 @@ switch (menuState)
 			var _saveString = json_stringify(_saveStruct);
 			json_string_save(_saveString, saveFile);
 		}*/
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
+		draw_text_ext_transformed_color(_guiW * 0.5, _guiH * 0.5, "if you need to turn off the sounds", 100, 700, 2, 2, 0, c_black, c_black, c_black, c_black, 1);
+		draw_text_ext_transformed_color(_guiW * 0.5, _guiH * 0.5 + 80, "just do it in your sound mixer...", 100, 700, 2, 2, 0, c_black, c_black, c_black, c_black, 1);
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_top);
 		
 		if (buttonSprite(200, _guiH - 120, 0, "Back to Menu", true))
 			menuState = MENU_STATE.MAIN_MENU;
@@ -167,6 +172,14 @@ switch (menuState)
 									 c_white, c_white, c_black, c_black, 1)*/
 		if (keyboard_check_pressed(vk_escape))
 			menuState = MENU_STATE.PAUSE;
+			
+		if (!fullscreenAknowledged) {
+			draw_set_font(fText);
+			draw_text_ext_transformed_color(20, 20, "PRESS 'F' FOR FULLSCREEN", 20, 500, 1.5, 1.8, 0, c_white, c_white, c_white, c_white, 1);
+			draw_set_font(fMenu);
+			if (keyboard_check_pressed(ord("F")))
+				fullscreenAknowledged = true;
+		}
 			
 		
 		// Dialog
