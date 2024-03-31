@@ -1,6 +1,12 @@
 Input()
 
 
+// Void death
+if (y > room_height)
+{
+	currentState = STATE.DEAD;
+	deathDir = point_direction(x,y,x+hsp,y+vsp)
+}	
 
 switch (currentState)
 {	
@@ -35,6 +41,9 @@ switch (currentState)
 			y += lengthdir_y(.1,deathDir)
 		}
 		
+			var off = 5
+			if (hsp == 0 and vsp == 0) off = 180
+			part_type_direction(blood,deathDir-off+180,deathDir+off+180,0,15)
 		part_particles_create(bloodSys,x+random_range(-1,1),y-5+random_range(-1,1),blood,5)
 		
 		//part_particles_create(impactDustSys,x,y,impactDust,5)	
