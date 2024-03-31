@@ -31,6 +31,13 @@ switch (menuState)
 {
 	case MENU_STATE.MAIN_MENU:
 	{
+		levelStarted = true
+		if (audio_is_playing(soundTrackReal))
+		{
+			audio_stop_sound(soundTrackReal)
+			audio_stop_sound(soundTrackLiminal)
+		}
+		
 		draw_sprite_ext(sLogo, 0, _drawX + 20, _guiH * 0.25, 0.5, 0.5, 0, c_white, 1);
 		
 		if (buttonSprite(_drawX, _drawY, 0, "Play", true))
@@ -65,6 +72,7 @@ switch (menuState)
 	
 	case MENU_STATE.LEVEL_SELECT:
 	{
+		levelStarted = true
 		var _levelSelectionY = _guiH * 0.35;
 		
 		draw_set_halign(fa_center);
@@ -144,6 +152,7 @@ switch (menuState)
 	
 	case MENU_STATE.SETTINGS:
 	{
+		levelStarted = true
 		/*var _showTimerString = (showTimer) ? "ON" : "OFF";
 		if (button(_drawX, _drawY, _buttonW * 1.2, _buttonH, "Timer: " + _showTimerString, true))
 		{
@@ -189,7 +198,14 @@ switch (menuState)
 			if (dialogArray[levelCurrent][dialogNum][0] == 0)
 			{
 				var chooseSound = choose(reporter2,reporter1,reporter3,reporter4,reporter5,reporter6)
-				dialogSound = audio_play_sound(chooseSound,0,0)
+				dialogSound = audio_play_sound(chooseSound,0,0,.8)
+			}
+			if (levelCurrent == 0) audio_play_sound(intro,0,0)
+			if (!audio_is_playing(soundTrackReal))
+			{
+				audio_play_sound(soundTrackReal,1,1)
+				audio_play_sound(soundTrackLiminal,1,1)
+				audio_sound_gain(soundTrackLiminal,0,0)
 			}
 		}
 		
@@ -250,14 +266,14 @@ switch (menuState)
 					if (dialogArray[levelCurrent][dialogNum][0] == 0)
 					{
 						var chooseSound = choose(reporter2,reporter1,reporter3,reporter4,reporter5,reporter6)
-						dialogSound = audio_play_sound(chooseSound,0,0)
+						dialogSound = audio_play_sound(chooseSound,0,0,.8)
 					}
 					else
 					{
 						var chooseSound = choose(homerbruh1,homerbruh2,homerbruh3,homerbruh4)
 						
-			audio_sound_pitch(chooseSound,.85)
-						dialogSound = audio_play_sound(chooseSound,0,0,.700)
+						audio_sound_pitch(chooseSound,.85)
+						dialogSound = audio_play_sound(chooseSound,0,0,.950)
 					}
 				}
 				else

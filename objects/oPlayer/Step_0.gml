@@ -8,8 +8,8 @@ if (y > room_height and currentState != STATE.DEAD)
 	deathDir = point_direction(x,y,x+hsp,y+vsp)
 	var rndYell = choose(homeryell1,homeryell2,homeryell3,homeryell4)
 	
-			audio_sound_pitch(rndYell,.85)
-	audio_play_sound(rndYell,0,0,.700)
+	audio_sound_pitch(rndYell,.85)
+	audio_play_sound(rndYell,0,0,.850)
 	if (random(100) < 8)
 	{
 		audio_play_sound(laughtrack,0,0)
@@ -33,13 +33,13 @@ switch (currentState)
 			//part_particles_create(bloodSys,x,y,blood,50)
 			part_type_size(blood,1,2,0,0)
 			
-			if (random(100) < 8)
+			if (random(100) < 20)
 			{
 				audio_play_sound(laughtrack,0,0)
 			}
 			var rndYell = choose(homeryell1,homeryell2,homeryell3,homeryell4)
 			audio_sound_pitch(rndYell,.85)
-			audio_play_sound(rndYell,0,0,.700)
+			audio_play_sound(rndYell,0,0,.850)
 			audio_play_sound(noise,0,0,1)
 		}
 		else break
@@ -103,7 +103,7 @@ switch (currentState)
 			{
 				audio_stop_sound(bass)
 				var sndSwitch = choose(switch1,switch2,switch3,switch4)
-				audio_play_sound(sndSwitch,0,0,1.5)
+				audio_play_sound(sndSwitch,0,0,1.8)
 				//wvsp = realwvsp
 				//whsp = realwhsp
 				wvsp = -1
@@ -115,6 +115,10 @@ switch (currentState)
 				currentKillTrigger = oKillReal
 				oCamera.lerpSpd = oCamera.lerpSpdDef
 				transitionWait = transitionWaitDef
+				
+				audio_sound_gain(oManager.soundTrackReal,oManager.maxGain,1000)
+				audio_sound_gain(oManager.soundTrackLiminal,0,1000)
+				
 				break
 			}
 			
@@ -140,7 +144,7 @@ if (random(100) < .1)
 	var chooseSound = choose(homerbruh1,homerbruh2,homerbruh3,homerbruh4)
 	
 			audio_sound_pitch(chooseSound,.85)
-	audio_play_sound(chooseSound,0,0,.700)
+	audio_play_sound(chooseSound,0,0,.950)
 }
 
 if (control and liminalJump)
@@ -168,6 +172,10 @@ if (control and liminalJump)
 			realwhsp = whsp
 			
 			layer_set_fx("Vignette_1",liminalEffect)
+			
+			audio_sound_gain(oManager.soundTrackReal,0,1000)
+			audio_sound_gain(oManager.soundTrackLiminal,.25,1000)
+			
 			break
 		}
 		
@@ -175,12 +183,12 @@ if (control and liminalJump)
 		{
 			
 			
-			if (random(100) < 10)
+			if (random(100) < 20)
 			{
 				
 				var rndYell = choose(homeryell1,homeryell2,homeryell3,homeryell4)
 				audio_sound_pitch(rndYell,.85)
-				audio_play_sound(rndYell,0,0,.700)
+				audio_play_sound(rndYell,0,0,.850)
 			}
 			
 			audio_play_sound(bass,0,1)
