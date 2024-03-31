@@ -10,12 +10,24 @@ if (oPlayer.currentState = STATE.REAL)
 				transRoom = levelArray[++levelCurrent];
 				levelUnlocked ++;
 				dialogNum = 0;
+				oManager.levelStarted = true
+				
+				var rndWin = choose(homerwin2,homerwin3)
+				
+			audio_sound_pitch(rndWin,.85)
+				audio_play_sound(rndWin,0,0,.6)
+				audio_play_sound(drinking,0,0,.6)
+				if (random(100) < 5)
+				{
+					audio_play_sound(booCrowd,0,0)
+				}
 			}
 			else {
 				trans = true;
 				transState = MENU_STATE.MAIN_MENU;
 				transRoom = rmMenu
 				dialogNum = 0;
+				oManager.levelStarted = true
 			}
 		}
 	}

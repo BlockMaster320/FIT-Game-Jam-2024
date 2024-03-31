@@ -2,10 +2,19 @@ Input()
 
 
 // Void death
-if (y > room_height)
+if (y > room_height and currentState != STATE.DEAD)
 {
 	currentState = STATE.DEAD;
 	deathDir = point_direction(x,y,x+hsp,y+vsp)
+	var rndYell = choose(homeryell1,homeryell2,homeryell3,homeryell4)
+	
+	audio_sound_pitch(rndYell,.85)
+	audio_play_sound(rndYell,0,0,.850)
+	if (random(100) < 8)
+	{
+		audio_play_sound(laughtrack,0,0)
+	}
+	audio_play_sound(noise,0,0,1)
 }	
 
 switch (currentState)
@@ -23,6 +32,15 @@ switch (currentState)
 			part_type_size(blood,2,3,0,0)
 			//part_particles_create(bloodSys,x,y,blood,50)
 			part_type_size(blood,1,2,0,0)
+			
+			if (random(100) < 20)
+			{
+				audio_play_sound(laughtrack,0,0)
+			}
+			var rndYell = choose(homeryell1,homeryell2,homeryell3,homeryell4)
+			audio_sound_pitch(rndYell,.85)
+			audio_play_sound(rndYell,0,0,.850)
+			audio_play_sound(noise,0,0,1)
 		}
 		else break
 	}
@@ -83,6 +101,9 @@ switch (currentState)
 			
 			if (transitionWait <= 0)
 			{
+				audio_stop_sound(bass)
+				var sndSwitch = choose(switch1,switch2,switch3,switch4)
+				audio_play_sound(sndSwitch,0,0,1.8)
 				//wvsp = realwvsp
 				//whsp = realwhsp
 				wvsp = -1
@@ -94,6 +115,10 @@ switch (currentState)
 				currentKillTrigger = oKillReal
 				oCamera.lerpSpd = oCamera.lerpSpdDef
 				transitionWait = transitionWaitDef
+				
+				audio_sound_gain(oManager.soundTrackReal,oManager.maxGain,1000)
+				audio_sound_gain(oManager.soundTrackLiminal,0,1000)
+				
 				break
 			}
 			
@@ -114,10 +139,23 @@ switch (currentState)
 	}
 }
 
+if (random(100) < .1)
+{
+	var chooseSound = choose(homerbruh1,homerbruh2,homerbruh3,homerbruh4)
+	
+			audio_sound_pitch(chooseSound,.85)
+	audio_play_sound(chooseSound,0,0,.950)
+}
 
 if (control and liminalJump)
 {
-	if (currentState == STATE.REAL and !place_meeting(x,y,oCollisionLiminal)) currentState = STATE.LIMINAL
+	if (currentState == STATE.REAL and !place_meeting(x,y,oCollisionLiminal))
+	{
+		currentState = STATE.LIMINAL
+		var sndSwitch = choose(switch1,switch2,switch3,switch4)
+		audio_play_sound(sndSwitch,0,0,1.5)
+		audio_play_sound(bulletClear,0,0,.3)
+	}
 	else if (currentState == STATE.LIMINAL) currentState = STATE.TRANSITION_TO_REAL
 	switch (currentState)
 	{	
@@ -134,11 +172,27 @@ if (control and liminalJump)
 			realwhsp = whsp
 			
 			layer_set_fx("Vignette_1",liminalEffect)
+			
+			audio_sound_gain(oManager.soundTrackReal,0,1000)
+			audio_sound_gain(oManager.soundTrackLiminal,.25,1000)
+			
 			break
 		}
 		
 		case STATE.TRANSITION_TO_REAL:
 		{
+			
+			
+			if (random(100) < 20)
+			{
+				
+				var rndYell = choose(homeryell1,homeryell2,homeryell3,homeryell4)
+				audio_sound_pitch(rndYell,.85)
+				audio_play_sound(rndYell,0,0,.850)
+			}
+			
+			audio_play_sound(bass,0,1)
+			
 			shiftX = frac(realLayerX)
 			shiftY = frac(realLayerY)
 			realLayerX = round(realLayerX)
@@ -173,6 +227,7 @@ if (control)
 	var dir = right - left
 	whsp += dir * acc
 	
+	
 	if (dir == -sign(whsp)) whsp *= .5
 	
 	whsp = clamp(whsp,-maxSpd,maxSpd)
@@ -182,11 +237,21 @@ if (control)
 	onGround = place_meeting(x,y+1,currentCollision)
 	if (onGround and onGroundPrev != onGround)
 	{
+		audio_play_sound(choose(impact1,impact2,impact3,impact4),0,0,.3)
 		part_type_direction(impactDust,175,190,0,0)
 		part_particles_create(impactDustSys,x,y,impactDust,5)
 		part_type_direction(impactDust,-5,5,0,0)
 		part_particles_create(impactDustSys,x,y,impactDust,5)	
 	}
+	
+	if (walkTimer <= 0 and onGround and dir != 0)
+	{
+		walkTimer = walkTimerDef
+		var walkSnd = choose(walk1,walk2,walk3,walk4,walk5,walk6)
+		audio_sound_pitch(walkSnd,random_range(1.8,2.2))
+		audio_play_sound(walkSnd,0,0,1)
+	}
+	walkTimer--
 	
 	if (dir = 0)
 	{
@@ -214,6 +279,10 @@ if (control)
 	if (jumpReady)
 	{
 		jumpReady = false
+		
+		var jmpSnd = choose(jump1,jump2,jump3,jump4)
+		audio_play_sound(jmpSnd,0,0,.6)
+		
 		if (soonJumpTimer < soonJumpTimerDefault and jump) wvsp = 0
 		wvsp -= jumpHeight
 		soonJumpTimer = 0
