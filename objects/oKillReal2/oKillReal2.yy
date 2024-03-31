@@ -12,8 +12,8 @@
     "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"opReal",
-    "path":"objects/opReal/opReal.yy",
+    "name":"oKillReal",
+    "path":"objects/oKillReal/oKillReal.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

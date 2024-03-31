@@ -61,9 +61,9 @@ else
 
 // Dialog
 dialogNum = 0;
-dialogArray = [[[0, "haha ha hh ahhhhahah hhhhaa haahahahaha aha hahhaahahah"], [1, "yoooo"], [0, "AMOUNGUVYS"]],
-			   [[0, "naaah"], [0, "sssussy"], [1, "baka"]],
-			   [],
+dialogArray = [[[0, "Weeeeelcome to LIMINAL!!!"], [0, "The reality show made by alcoholics for alcoholics."], [0, "Each episode, a poor individual is VOLUNTARILY (TM) brought to our dungeon-like television set..."], [0, "...to show its worth by overcoming a series of intricate puzzles."], [0, "A great price awaits those who are able to conquer the challenge - a chance for a new life."], [0, "Those who aren't? Well, let's just say you don't want to go near these pink puddles laying around."], [0, "Enough of boring talking, are you ready?"], [1, "..."], [0, "The task is simple."], [0, "Overcome the obstacles, get your bottle of beer."], [0, "Use \"WASD\" to move around."], [1, "???"]],
+			   [[0, "Feeling a little dizzy already?"], [0, "Don't worry, with each beer, it actually gets easier! (unlike driving :DD)"], [0, "You might start experiencing some DOUBLE VISION due to the increasing level of alcohol in your blood."], [0, "Try to use this to your advantage."], [0, "By pressing the SHIFT key, you can materilize the perceived reality of your double vision."], [1, "..."]],
+			   [[0, "Heard of pink water?"], [0, "Now get reedy fooor... um..."], [0, "BLACK WATER... yeah."], [1, "..."], [0, "Snaps you back to reality or something in those lines."]],
 			   [],
 			   [],
 			   [],

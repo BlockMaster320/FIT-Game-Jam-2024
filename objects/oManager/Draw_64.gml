@@ -176,8 +176,8 @@ switch (menuState)
 			var _textColor = c_white;
 			var _outlineColor = c_white;
 			var _offset = 15;
-			var _sep = 12;
-			var _w = 290;
+			var _sep = 16;
+			var _w = 500;
 			//var _width = string_width(dialogArray[levelCurrent][dialogNum][1]);
 			//var _height = string_height(dialogArray[levelCurrent][dialogNum][1]) + _sep;
 			//var _numOfRows = _width div _w;
