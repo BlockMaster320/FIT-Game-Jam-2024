@@ -67,7 +67,7 @@ crowdSound = sndCrowdAmbientLooping
 
 soundTrackReal = sounstrack_real
 soundTrackLiminal = sounstrack_liminal
-maxGain = .2
+maxGain = .1
 
 // Dialog
 dialogNum = 0;

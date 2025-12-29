@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":7.608,
+  "duration":7.5647163,
   "name":"bass",
   "parent":{
     "name":"Sounds",

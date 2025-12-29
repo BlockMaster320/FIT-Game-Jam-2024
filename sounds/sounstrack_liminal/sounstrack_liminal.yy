@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":120.37222,
+  "duration":120.372246,
   "name":"sounstrack_liminal",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"sounstrack_liminal.mp3",
   "type":1,
-  "volume":0.2,
+  "volume":0.15,
 }

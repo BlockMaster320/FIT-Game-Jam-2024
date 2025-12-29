@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.384,
+  "duration":0.34721088,
   "name":"walk3",
   "parent":{
     "name":"Sounds",

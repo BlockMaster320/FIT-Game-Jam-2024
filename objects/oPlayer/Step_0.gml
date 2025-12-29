@@ -174,7 +174,7 @@ if (control and liminalJump)
 			layer_set_fx("Vignette_1",liminalEffect)
 			
 			audio_sound_gain(oManager.soundTrackReal,0,1000)
-			audio_sound_gain(oManager.soundTrackLiminal,.25,1000)
+			audio_sound_gain(oManager.soundTrackLiminal,.15,1000)
 			
 			break
 		}

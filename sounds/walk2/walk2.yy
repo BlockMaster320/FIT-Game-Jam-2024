@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.264,
+  "duration":0.2314966,
   "name":"walk2",
   "parent":{
     "name":"Sounds",

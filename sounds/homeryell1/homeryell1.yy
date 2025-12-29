@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.888,
+  "duration":0.85691607,
   "name":"homeryell1",
   "parent":{
     "name":"Sounds",

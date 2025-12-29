@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":13.296,
+  "duration":13.25712,
   "name":"laughtrack",
   "parent":{
     "name":"Sounds",

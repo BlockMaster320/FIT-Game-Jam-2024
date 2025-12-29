@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.336,
+  "duration":0.30863947,
   "name":"walk5",
   "parent":{
     "name":"Sounds",

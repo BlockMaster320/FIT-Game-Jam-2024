@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.184,
+  "duration":2.1476643,
   "name":"homerbruh2",
   "parent":{
     "name":"Sounds",

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.584,
+  "duration":1.5570068,
   "name":"impact1",
   "parent":{
     "name":"Sounds",

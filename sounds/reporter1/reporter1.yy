@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.968,
+  "duration":1.9304988,
   "name":"reporter1",
   "parent":{
     "name":"Sounds",

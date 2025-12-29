@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.936,
+  "duration":0.9037642,
   "name":"noise",
   "parent":{
     "name":"Sounds",

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.112,
+  "duration":2.0767121,
   "name":"drinking",
   "parent":{
     "name":"Sounds",

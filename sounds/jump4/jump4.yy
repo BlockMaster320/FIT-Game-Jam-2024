@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.456,
+  "duration":0.42437643,
   "name":"jump4",
   "parent":{
     "name":"Sounds",

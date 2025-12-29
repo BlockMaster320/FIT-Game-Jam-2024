@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.796213,
+  "duration":1.7962132,
   "name":"bulletClear",
   "parent":{
     "name":"Sounds",

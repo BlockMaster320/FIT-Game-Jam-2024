@@ -189,6 +189,16 @@ switch (menuState)
 			if (keyboard_check_pressed(ord("F")))
 				fullscreenAknowledged = true;
 		}
+		
+		if (levelStarted)
+		{
+			if (!audio_is_playing(soundTrackReal))
+			{
+				audio_play_sound(soundTrackReal,1,1)
+				audio_play_sound(soundTrackLiminal,1,1)
+				audio_sound_gain(soundTrackLiminal,0,0)
+			}
+		}
 			
 		if (levelStarted and dialogNum < array_length(dialogArray[levelCurrent]) && !trans)
 		{
@@ -201,12 +211,6 @@ switch (menuState)
 				dialogSound = audio_play_sound(chooseSound,0,0,.8)
 			}
 			if (levelCurrent == 0) audio_play_sound(intro,0,0)
-			if (!audio_is_playing(soundTrackReal))
-			{
-				audio_play_sound(soundTrackReal,1,1)
-				audio_play_sound(soundTrackLiminal,1,1)
-				audio_sound_gain(soundTrackLiminal,0,0)
-			}
 		}
 		
 		// Dialog

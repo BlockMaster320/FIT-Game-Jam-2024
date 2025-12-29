@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":38.112,
+  "duration":38.06544,
   "name":"sndCrowdAmbientLooping",
   "parent":{
     "name":"Sounds",

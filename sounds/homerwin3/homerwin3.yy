@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.64,
+  "duration":2.6133332,
   "name":"homerwin3",
   "parent":{
     "name":"Sounds",

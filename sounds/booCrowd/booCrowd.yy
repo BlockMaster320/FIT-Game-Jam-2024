@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":6.144,
+  "duration":6.1143312,
   "name":"booCrowd",
   "parent":{
     "name":"Sounds",

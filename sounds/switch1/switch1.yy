@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.344,
+  "duration":1.3075737,
   "name":"switch1",
   "parent":{
     "name":"Sounds",
